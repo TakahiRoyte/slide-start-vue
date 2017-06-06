@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Start Vue.js v1.0</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="grid12.css">
+    <style>
+      body { font-family: 'yutaCoco'; }
+      h1, h2, h3 {
+        font-family: 'yutaCoco';
+        font-weight: normal;
+      }
+      .remark-slide-content {
+        font-size: 2rem;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .remark-code textarea{ font-family: 'Ricty Diminished';font-size: 1rem; }
+      .remark-inline-code{ font-family: 'Ricty Diminished'; }
+      .slide-img>img{width: 100%; }
+      .sm-img>img{width: 100%; }
+      .xs-img>img{width: 80%; }
+      .sideci-img{
+        background-color: #000000;
+        padding-left: 10px;
+        padding-top: 10px;
+        text-align: center;
+      }
+      h1{text-align: center;}
+      .big{font-size: 3rem !important; font-weight: 'Ricty';}
+    </style>
+  </head>
+  <body>
+    <script src="bower_components/remark/out/remark.min.js"></script>
+    <script src="bower_components/vue/dist/vue.min.js"></script>
+    <script src="bower_components/marked/marked.min.js"></script>
+
+    <script>
+      var slideshow = remark.create();
+    </script>
+
+    <script>
+var slideshow = remark.create({
+  sourceUrl: 'slide.md',
+});
+
+new Vue({
+  el: '#vue-1',
+  data: {
+    name: "Takahiro",
+  },
+});
+
+
+new Vue({
+  el: '#vue-2',
+  data: {
+    todos: ['買い物', '掃除'],
+    newTodo: ''
+  },
+  methods: {
+    add: function(){
+      this.todos.push(this.newTodo);
+      this.newTodo = ''
+    },
+    del: function(data){
+      this.todos.$remove(data);},
+  },
+})
+
+new Vue({
+  el: '#vue-3',
+  data: { n: 1 },
+  computed: {
+    even: function () {
+      if(this.n%2===0) {return true};
+      return false;
+    },
+  }
+})
+
+new Vue({
+  el: '#vue-4',
+  data: {md: "# Markdown Editor\n- このスライドもMDにて記載\n- Vue × MD = ♡"},
+  computed: {
+    marked: function () {
+      return marked(this.md);
+    },
+  }
+})
+    </script>
+  </body>
+</html>

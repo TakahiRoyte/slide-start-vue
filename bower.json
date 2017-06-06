@@ -1,0 +1,17 @@
+{
+  "name": "slide-vue",
+  "version": "0.0.0",
+  "license": "CC0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "remark": "~0.12.0",
+    "vue": "~1.0.7",
+    "marked": "~0.3.5"
+  }
+}
